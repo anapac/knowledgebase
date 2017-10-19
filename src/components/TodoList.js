@@ -8,23 +8,16 @@ class TodoList extends Component {
     super(props);
 
     this.state = {
-      todos: [
-        {
-          name: 'Karate - Dodo',
-          desc: 'Провери кога са тренировките.'
-        },
-        {
-          name: 'React.js',
-          desc: 'Work on React'
-        },
-        {
-          name: 'Work on JS',
-          desc: 'JS Ninja + You don\'t know JS'
-        }
-      ]
+      todos: []
     } // this.state
 
     this.listTodos.bind(this);
+  }
+
+  componentDidMount() {
+    fetch('/todos').then(todos => {
+      this.setState({ todos });
+    });
   }
 
   listTodos(todo, idx) {
@@ -39,7 +32,10 @@ class TodoList extends Component {
     return (
       <div id='todolist'>
         <fieldset>
-          { todos.map((todo, idx) => this.listTodos(todo, idx)) }
+          { todos.length
+            ? todos.map((todo, idx) => this.listTodos(todo, idx))
+            : ''
+          }
         </fieldset>
       </div>
     );
