@@ -1,0 +1,21 @@
+#todolist {
+  background-color: #222;
+  text-align: left;
+}
+
+.todoItem {
+  margin: 0 5px;
+  padding: 0 5px;
+  background-color: beige;
+}
+
+.todoItemName {
+  margin: 5px 0;
+  color: brown;
+}
+
+.todoItemDesc {
+  margin: 0;
+  padding: 0 0 0 10px;
+  font-style: oblique;
+}
