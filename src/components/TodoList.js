@@ -15,7 +15,7 @@ class TodoList extends Component {
   }
 
   componentDidMount() {
-    fetch('/todos').then(todos => {
+    fetch('/API/todos').then(todos => {
       this.setState({ todos });
     });
   }
